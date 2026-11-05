@@ -1,0 +1,72 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "raw · 연구 자료",
+	"behavior": "create",
+	"noteContentFormat": "## 내 메모\n- 왜 저장했나: \n- 어디에 쓸까: \n\n## 하이라이트\n{{highlights}}\n\n## 초록·본문\n{{content}}",
+	"properties": [
+		{
+			"name": "type",
+			"value": "research",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\", \"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "clipped",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "doi",
+			"value": "{{meta:name:citation_doi}}",
+			"type": "text"
+		},
+		{
+			"name": "pdf",
+			"value": "{{meta:name:citation_pdf_url}}",
+			"type": "text"
+		},
+		{
+			"name": "status",
+			"value": "inbox",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings, research",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://arxiv.org/abs/",
+		"https://doi.org/",
+		"https://www.semanticscholar.org/paper/",
+		"https://dl.acm.org/doi/",
+		"https://openreview.net/forum"
+	],
+	"noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}} {{title|safe_name}}",
+	"path": "raw/research"
+}

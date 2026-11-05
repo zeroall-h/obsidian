@@ -1,0 +1,11 @@
+# Obsidian - 기기별 상태 파일
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache
+.trash/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
