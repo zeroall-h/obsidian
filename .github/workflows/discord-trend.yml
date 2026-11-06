@@ -1,0 +1,22 @@
+name: 트렌드 리포트 디스코드 알림
+
+# 트렌드 리포트가 push되면 TOP 5를 디스코드로 보낸다.
+# 필요한 Secret: DISCORD_WEBHOOK_URL (Settings → Secrets and variables → Actions)
+on:
+  push:
+    paths:
+      - '20_블로그소재/*트렌드 리포트.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 디스코드로 보내기
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python3 .github/scripts/discord_trend.py
